@@ -1,4 +1,6 @@
-package ph.eapesa.apps;
+package ph.eapesa.apps.api;
+
+import ph.eapesa.apps.DateUtil;
 
 import java.util.*;
 
@@ -54,14 +56,15 @@ public class ProjectPlan {
                 earliestStart = task.getDate(Task.STARTFLAG);
                 init = false;
             }
-            if (init || task.getDate(Task.STARTFLAG).compareTo(latestEnd) == 1) {
+            if (init || task.getDate(Task.ENDFLAG).compareTo(latestEnd) == 1) {
                 latestEnd = task.getDate(Task.ENDFLAG);
                 init = false;
             }
         }
         long expectedEndDateTs = latestEnd.getTime();
         long assumedStartDateTs = earliestStart.getTime();
-        totalDurationInDays = (int) ((expectedEndDateTs - assumedStartDateTs) / DateUtil.DAYS_IN_MSECS);
+        // Math does not include the "first day" does adding 1 is necessary
+        totalDurationInDays = (int) ((expectedEndDateTs - assumedStartDateTs) / DateUtil.DAYS_IN_MSECS) + 1;
         expectedEndDate = latestEnd;
         assumedStartDate = earliestStart;
     }

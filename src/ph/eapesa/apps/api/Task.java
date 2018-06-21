@@ -1,6 +1,7 @@
-package ph.eapesa.apps;
+package ph.eapesa.apps.api;
 
-import java.lang.reflect.Array;
+import ph.eapesa.apps.DateUtil;
+
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -47,6 +48,7 @@ public class Task {
         } else {
             endDate = dateFormat.parse(dateString);
         }
+        durationInMs = endDate.getTime() - startDate.getTime();
     }
 
     public long getDuration(int flag) { return durationInMs; }
