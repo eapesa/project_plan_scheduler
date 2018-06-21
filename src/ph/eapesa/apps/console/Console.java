@@ -3,10 +3,8 @@ package ph.eapesa.apps.console;
 import ph.eapesa.apps.api.ProjectPlan;
 import ph.eapesa.apps.api.Task;
 
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -76,7 +74,7 @@ public class Console {
                     continue;
                 }
 
-                System.out.println("\n" + Query.GET_DEPS);
+                System.out.printf("\n" + Query.GET_DEPS);
                 String deps = io.nextLine();
                 if (!deps.equals("") || !deps.equals("\\n")) {
                     String[] depsArray = deps.split(",");
