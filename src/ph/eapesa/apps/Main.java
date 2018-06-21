@@ -18,46 +18,16 @@
 
 package ph.eapesa.apps;
 
+import ph.eapesa.apps.console.Console;
+
+import java.lang.reflect.Array;
 import java.text.ParseException;
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) throws ParseException {
-        ProjectPlan project = new ProjectPlan("test_plan");
-
-        Task task1 = new Task("task1", "21-06-2018", "23-06-2018");
-        project.addNewTask(task1);
-
-        Task task2 = new Task("task2", "24-06-2018", "26-06-2018");
-        project.addNewTask(task2);
-
-        Task task3 = new Task("task3", "27-06-2018", "02-07-2018");
-        project.addNewTask(task3);
-
-        Task task4 = new Task("task4", "28-06-2018", "29-06-2018");
-        project.addNewTask(task4);
-
-        task1.addDependency(task2);
-        task1.addDependency(task3);
-
-        System.out.println("TASK1 STARTDATE > " + task1.getDate(Task.STARTFLAG) + " | ENDDATE > " + task1.getDate(Task.ENDFLAG));
-        System.out.println("TASK2 STARTDATE > " + task2.getDate(Task.STARTFLAG) + " | ENDDATE > " + task2.getDate(Task.ENDFLAG));
-        System.out.println("TASK3 STARTDATE > " + task3.getDate(Task.STARTFLAG) + " | ENDDATE > " + task3.getDate(Task.ENDFLAG));
-
-        System.out.println("===============");
-
-        System.out.println("TOTAL DAYS > " + project.getPlanDuration());
-        System.out.println("GET ASSUMED START DATE > " + project.getAssumedStartDate());
-        System.out.println("GET EXPECTED END DATE > " + project.getExpectedEndDate());
-
-        project.removeTask("task1");
-        project.addNewTask(task1);
-
-        System.out.println("===============");
-
-        System.out.println(task1.getDate(Task.STARTFLAG) + " || " + task1.getDate(Task.ENDFLAG));
-        System.out.println("TOTAL DAYS > " + project.getPlanDuration());
-        System.out.println("GET ASSUMED START DATE > " + project.getAssumedStartDate());
-        System.out.println("GET EXPECTED END DATE > " + project.getExpectedEndDate());
+        Console test = new Console();
+        test.display();
     }
 }
