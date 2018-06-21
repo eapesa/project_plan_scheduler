@@ -20,9 +20,7 @@ package ph.eapesa.apps;
 
 import ph.eapesa.apps.console.Console;
 
-import java.lang.reflect.Array;
 import java.text.ParseException;
-import java.util.Scanner;
 
 public class Main {
 
