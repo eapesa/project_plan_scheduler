@@ -54,7 +54,7 @@ $> git clone https://github.com/eapesa/project_plan_scheduler.git
 $> cd project_plan_scheduler
 ```
 
-** Run app via Terminal **
+#### Run app via Terminal
 
 - Open terminal (preferred iTerm2 for Mac OSX)
 
@@ -68,12 +68,12 @@ $> cd PATH/TO/APPLICATION/project_plan_scheduler
 $> ./run.sh
 ```
 
-NOTE: If above does not work, please execute the command below then repeat the above command:
+**NOTE:** If above does not work, please execute the command below then repeat the above command:
 ```
 $> chmod +x run.sh
 ```
 
-** Run app via Intellij IDEA **
+#### Run app via Intellij IDEA
 
 - Open Intellij and click `Open`
 
