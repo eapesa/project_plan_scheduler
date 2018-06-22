@@ -19,7 +19,7 @@ Project Plan Scheduler
 
 ## Limitations and Assumptions
 
-1. Time is not considered. When creating task, **only the specific date is asked**. Also, when a task is set with starting and end dates, the *whole day for the dates is covered*.
+1. Time is not considered. When creating task, **only the specific date is asked**. Also, when a task is set with starting and end dates, the **whole day for the dates is covered**.
     - Example, a task with start date of 21-06-2018 and end date of 22-06-2018 will consume two days to finish.
 
 2. Calculation of duration **includes weekends in the count**. This could be improved later on.
