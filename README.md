@@ -19,13 +19,13 @@ Project Plan Scheduler
 
 ## Limitations and Assumptions
 
-1. Time is not considered. When creating task, *only the specific date is asked*. Also, when a task is set with starting and end dates, the *whole day for the dates is covered*.
-    - Example, a task with start date of 21-06-2018 and end date of *22-06-2018* will consume two days to finish.
+1. Time is not considered. When creating task, **only the specific date is asked**. Also, when a task is set with starting and end dates, the *whole day for the dates is covered*.
+    - Example, a task with start date of 21-06-2018 and end date of 22-06-2018 will consume two days to finish.
 
-2. Calculation of duration *includes weekends in the count*. This could be improved later on.
+2. Calculation of duration **includes weekends in the count**. This could be improved later on.
     - A task with start date of 22-06-2018 and end date of 25-06-2018 will have 4 days of duration instead of 2.
 
-3. A task start and end date will vary depending on its dependencies. If its dependencies are set to be done later then the *start and end dates of the task will be moved the day after its latest dependency ends*.
+3. A task start and end date will vary depending on its dependencies. If its dependencies are set to be done later then the **start and end dates of the task will be moved the day after its latest dependency ends**.
     - TaskA has a start date of 01-07-2018 and end date of 02-07-2018 and it has a dependency, TaskB, with start date of 05-07-2018 and end date of 06-07-2018. TaskA's start date and end date will change to 07-07-2018 and 08-07-2018 respectively.
 
 4. If the earliest task set to start and finish has dependencies that will finish later than itself then the dates for the said task will change, specifically start date, and duration may vary.
