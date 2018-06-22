@@ -19,21 +19,60 @@ public class ProjectPlan {
         taskList = new ArrayList<>();
     }
 
+    // ************************************************************
+    // Public attributes and methods
+    // ************************************************************
+
+    /**
+     * Returns the assigned name of the project plan
+     *
+     * @return current name
+     */
     public String getName() { return name; }
 
+    /**
+     * Updates the assigned name of the project plan
+     *
+     * @param name will be the new name of the plan
+     */
     public void setName(String name) { this.name = name; }
 
+    /**
+     * Returns the total duration of the plan IN DAYS
+     *
+     * @return plan duration in days
+     */
     public int getPlanDuration() { return totalDurationInDays; }
 
+    /**
+     * Returns the assumed starting date of the plan
+     *
+     * @return a `Date` that represents the currently assumed starting date of the plan
+     */
     public Date getAssumedStartDate() { return assumedStartDate; }
 
+    /**
+     * Returns the expected ending date of the plan
+     *
+     * @return a `Date` that represents the currently expected ending date of the plan
+     */
     public Date getExpectedEndDate() { return expectedEndDate; }
 
+    /**
+     * Adds new task in the plan
+     *
+     * NOTE: possible duplicates are not yet handled
+     */
     public void addNewTask(Task newTask) {
         taskList.add(newTask);
         updatePlan();
     }
 
+    /**
+     * Removes a task in the plan given the name of the task
+     *
+     * @param name of the task to be removed in the list
+     */
     public void removeTask(String name) {
         Iterator iter = taskList.iterator();
         while (iter.hasNext()) {
@@ -44,6 +83,10 @@ public class ProjectPlan {
         }
         updatePlan();
     }
+
+    // ************************************************************
+    // Private attributes and methods
+    // ************************************************************
 
     private void updatePlan() {
         boolean init = true;
