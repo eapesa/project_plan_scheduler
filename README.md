@@ -1,7 +1,7 @@
 Project Plan Scheduler
 ----------------------
 
-* [Objectives](https://github.com/eapesa/project_plan_scheduler#instructions)
+* [Objectives](https://github.com/eapesa/project_plan_scheduler#objectives)
 * [Limitations and Assumptions](https://github.com/eapesa/project_plan_scheduler#limitations-and-assumptions)
 * [Environment](https://github.com/eapesa/project_plan_scheduler#environment)
 * [Installation](https://github.com/eapesa/project_plan_scheduler#installation)
