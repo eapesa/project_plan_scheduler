@@ -68,9 +68,9 @@ public class Console {
                 Task task;
                 try {
                     task = new Task(taskName, taskStartDate, taskEndDate);
-                } catch (ParseException e) {
+                } catch (Exception e) {
                     System.out.println(Error.ENCOUNTERED_EXCEPTION + e.toString());
-                    break;
+                    continue;
                 }
 
                 taskMap.put(taskName, task);

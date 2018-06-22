@@ -15,13 +15,23 @@ public class Task {
     private long durationInMs;
     private ArrayList dependencies;
 
-    public Task(String name, String startDate, String endDate) throws ParseException {
+    public Task(String name, String startDate, String endDate) throws ParseException, IllegalArgumentException {
         this.name = name;
 
         DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         this.startDate = dateFormat.parse(startDate);
-        this.originalStartDate = this.startDate;
         this.endDate = dateFormat.parse(endDate);
+
+        if (this.startDate.compareTo(this.endDate) == 1) {
+            throw new IllegalArgumentException("End date can't be less than the start date.");
+        }
+
+        long now = System.currentTimeMillis();
+        if (this.startDate.getTime() < now || this.endDate.getTime() < now) {
+            throw new IllegalArgumentException("Start date or end date can't be any day prior today.");
+        }
+
+        this.originalStartDate = this.startDate;
         this.originalEndDate = this.endDate;
         this.durationInMs = this.endDate.getTime() - this.startDate.getTime();
 
