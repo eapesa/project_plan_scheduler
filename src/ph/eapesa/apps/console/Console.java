@@ -68,12 +68,12 @@ public class Console {
                 Task task;
                 try {
                     task = new Task(taskName, taskStartDate, taskEndDate);
-                    taskMap.put(taskName, task);
                 } catch (ParseException e) {
                     System.out.println(Error.ENCOUNTERED_EXCEPTION + e.toString());
-                    continue;
+                    break;
                 }
 
+                taskMap.put(taskName, task);
                 System.out.printf("\n" + Query.GET_DEPS);
                 String deps = io.nextLine();
                 if (!deps.equals("") || !deps.equals("\\n")) {
@@ -87,6 +87,9 @@ public class Console {
                         Task taskDep = (Task) taskMap.get(d);
                         if (taskDep != null) {
                             task.addDependency(taskDep);
+                        } else {
+                            System.out.println(Error.NO_DEPENDENCY + " Proceeding...");
+                            continue;
                         }
                     }
                 }
